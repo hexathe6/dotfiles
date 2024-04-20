@@ -1,0 +1,93 @@
+@-moz-document regexp("https://hackage.haskell.org/.*/docs/[^s].*") {
+:root {
+	--content-padding: 16px;
+	--toc-width: 300px;
+}
+@media (prefers-color-scheme: dark) {
+	:root {
+		--border-thick: 1px solid #666;
+		--border-thin: 1px solid #444;
+		--expander: #fff;
+		--header: #28e;
+		--link: #4cf;
+		--target: #0f8;
+		--targetbg: #084;
+		--text: #fff;
+		--srclink: #ccc;
+		--base: #000;
+		--layer1: #222;
+		--layer2: #444;
+		--synopsis: #001420;
+	}
+}
+@media (prefers-color-scheme: light) {
+	:root {
+		--border-thick: 1px solid #0004;
+		--border-thin: 1px solid #0002;
+		--expander: #000;
+		--header: #06c;
+		--link: #08f;
+		--target: #ff0;
+		--targetbg: #8408;
+		--text: #000;
+		--srclink: #444;
+		--base: #fff;
+		--layer1: #eee;
+		--layer2: #ccc;
+		--synopsis: #f8f8f8;
+	}
+}
+
+.empty
+{
+	display: none;
+}
+
+body {color: var(--text); background: var(--base)}
+
+pre, table.info {color: var(--text); background: var(--layer1); border-color: var(--layer2)}
+
+table, .src.clearfix {width: 100%}
+
+#package-header {margin-left: var(--toc-width)}
+
+#content
+{
+	margin-left: calc(var(--toc-width) + var(--content-padding));
+	width: calc(100% - var(--toc-width) - (2 * var(--content-padding))) !important;
+	max-width: unset !important;
+}
+#table-of-contents
+{
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: var(--toc-width);
+	max-width: unset;
+}
+#contents-list {background: var(--layer1)}
+#contents-list li {border-bottom: var(--border-thin)}
+#contents-list li > ul {margin-left: 0; padding-left: 8px; border-left: var(--border-thick)}
+
+.top p.src {border-color: var(--layer2)}
+.src, .subs .subs p.src, .doc th {background: var(--layer1)}
+.subs, .top > .doc, .subs > .doc {border-left: var(--border-thick)}
+.doc th, .doc td {border: var(--border-thin)}
+
+#synopsis {top: 0; bottom: 0}
+@media (prefers-color-scheme: dark) {#synopsis details > summary {filter: invert(100%)}}
+#synopsis ul, #synopsis ul li.src, #search-results, .dropdown-menu {background: var(--synopsis)}
+
+/* these only ligate properly if you use a fancy font like fira code */
+.expander::before {content: "|>"}
+.collapser::before {content: "||"}
+
+.collapser::before, .expander::before, .noexpander::before {color: var(--expander)}
+
+.caption, h1, h2, h3, h4, h5, h6, summary {color: var(--header)}
+
+a[href]:link {color: var(--link)}
+
+:target {color: var(--target); background: var(--targetbg)}
+:target:hover {color: var(--text); background: var(--target)}
+}
