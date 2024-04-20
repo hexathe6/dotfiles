@@ -53,9 +53,14 @@ table, .src.clearfix {width: 100%}
 
 #content
 {
+	margin-left: var(--content-padding);
+	width: calc(100% - (2 * var(--content-padding))) !important;
+	max-width: unset !important;
+}
+#content:has(#table-of-contents)
+{
 	margin-left: calc(var(--toc-width) + var(--content-padding));
 	width: calc(100% - var(--toc-width) - (2 * var(--content-padding))) !important;
-	max-width: unset !important;
 }
 #table-of-contents
 {
