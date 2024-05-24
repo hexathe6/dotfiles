@@ -13,9 +13,10 @@
   
 ## userscripts
 
-none uploaded yet!
+`youtube_blacklist.js`
+- blacklists channels / hides their videos
+- edit the `list` variable to change the blacklist
 
 ## license
 
-GPLv3: it doesn't matter for personal use though (and when are you
-going to use dots for anything else?), so don't worry about it
+GPLv3+: it doesn't matter for personal use though (and when are you going to use dots for anything else?), so don't worry about it
