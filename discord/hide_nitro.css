@@ -1,0 +1,26 @@
+@-moz-document domain("discord.com") {
+#profile-customization-tab [class*=shop],
+.sectionsContainer_a37883 > div:nth-child(4),
+.sectionsContainer_a37883 > div:nth-child(5),
+.premiumFeatureBorder__9bbb3,
+.upsellOverlayContainer__08979,
+[aria-controls="nitro-server-boost-tab"],
+div.item__48dda:nth-child(13),
+[role="tab"][aria-label="Nitro"],
+.selectionGroup__36139,
+li.channel_c21703:nth-child(3),
+#guild-header-popout-premium-subscribe,
+[aria-label="Channels"] > [aria-label*="Boosts"],
+[class*="premiumIcon"],
+[class*=categorySectionNitroLocked],
+[class*=listItems] > div:has([class*=categoryItemLockIconContainer]),
+[class*=upsellContainer],
+button:has([class*=premiumSubscribeButton]),
+[class*=emojiSection]:has([class*=premiumSubscribeButton]) > div > div > div:nth-child(2),
+[class*=emojiSection] > div:not(:has(img)) > div:nth-child(2) /* "this is a default emoji" */,
+[class*=premiumFeatureBorder],
+[class*=selectionGroup]:has([class*=appIconSelection])
+{
+    display: none;
+}
+}

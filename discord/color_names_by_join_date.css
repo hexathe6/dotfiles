@@ -1,0 +1,26 @@
+@-moz-document domain("discord.com") {
+.theme-dark [id*=message-username]:has([class*=newMemberBadge]) > [class*=username] {color: #fff8;}
+.theme-light [id*=message-username]:has([class*=newMemberBadge]) > [class*=username] {color: #0008;}
+
+.theme-dark [id*=message-username]:not(:has([class*=newMemberBadge])):has([class*=Dot]) > [class*=username],
+.theme-dark [class*=nameAndDecorators] [class*=username]
+{
+    color: #fff8;
+	-webkit-txt-stroke: 1px var(--rolecolor);
+	text-shadow: 0 0 1px var(--rolecolor);
+}
+.theme-light [id*=message-username]:not(:has([class*=newMemberBadge])):has([class*=Dot]) > [class*=username],
+.theme-light [class*=nameAndDecorators] [class*=username]
+{
+    color: #0008;
+	-webkit-txt-stroke: 1px var(--rolecolor);
+	text-shadow: 0 0 1px var(--rolecolor);
+}
+.theme-dark [id*=message-username]:not(:has([class*=newMemberBadge])) > :not(span) + [class*=username] {color: #fff;}
+.theme-light [id*=message-username]:not(:has([class*=newMemberBadge])) > :not(span) + [class*=username] {color: #000;}
+
+[class*=newMemberBadge]
+{
+    display: none;
+}
+}

@@ -1,0 +1,37 @@
+/* ==UserStyle==
+@name           discord custom custom theme
+@namespace      github.com/openstyles/stylus
+@description    user-specified discord theme
+@author         hexa6
+@license GPLv3.0
+@version 1
+
+@preprocessor stylus
+
+@var color color-1 "color 1" #000
+@var color color-2 "color 2" #444
+@var color color-3 "color 3" #000
+
+@var range color-1-pos "color 1 position" [0, 0, 100, null, "%"]
+@var range color-2-pos "color 2 position" [50, 0, 100, null, "%"]
+@var range color-3-pos "color 3 position" [100, 0, 100, null, "%"]
+
+@var range angle "angle" [0, 0, 180, null, "deg"]
+
+@var color accent "accent color" #fff
+@var range mutation "muted accent opacity" [50, 0, 100, null, "%"]
+
+==/UserStyle== */
+
+@-moz-document domain("discord.com") {
+* {
+    --custom-theme-background:
+        linear-gradient(angle, 
+            hsl(hue(color-1) saturation(color-1) lightness(color-1)) color-1-pos,
+            hsl(hue(color-2) saturation(color-2) lightness(color-2)) color-2-pos,
+            hsl(hue(color-3) saturation(color-3) lightness(color-3)) color-3-pos
+        );
+	--accent-color: accent;
+	--accent-color-muted: transparentify(accent mutation);
+}
+}

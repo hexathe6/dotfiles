@@ -1,0 +1,66 @@
+@-moz-document domain("discord.com") {
+[class*=repliedTextContent] > ul
+{
+	display: none !important;
+}
+
+:not([aria-label="Search Results"]) >*>*>*>*>*>*>*> [class*=contents],
+[class*=header_]
+{
+    display: flex !important;
+    flex-direction: row;
+    text-indent: unset !important;
+}
+
+[class*=compact][class*=wrapper]
+{
+    margin: 0 !important;
+    padding: 0 !important;
+    margin-top: 6px !important;
+    margin-left: 4px !important;
+    
+}
+
+[class*=compact] [class*=messageContent]
+{
+    display: block !important;
+}
+
+[class*=headerText]
+{
+    display: block !important;
+    width: max-content !important;
+    margin-right: 16px !important;
+    height: min-content !important;
+}
+
+[class*=repliedMessage]
+{
+    position: static !important;
+    margin-left: 39px !important;
+    margin-bottom: 4px !important;
+    margin-top: 8px !important;
+}
+
+[class*=repliedMessage]::before
+{
+    content: unset !important;
+}
+
+[class*="timestamp"]
+{
+    margin-right: 8px !important;
+    width: max(60px, max-content) !important;
+    opacity: 1;
+}
+
+[id*=message-accessories]
+{
+    margin-left: 46px;
+}
+
+[class*=markup] ol
+{
+    margin-left: calc(1.4em + .6em*var(--totalCharacters));
+}
+}

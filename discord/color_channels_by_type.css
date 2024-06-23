@@ -1,0 +1,55 @@
+@-moz-document domain("discord.com") {
+[aria-label="Text icon"],
+[aria-label="Text (Limited) icon"],
+[aria-label="Text (Active Threads) icon"],
+[aria-label="Forum icon"],
+[aria-label="Forum (Limited) icon"],
+[aria-label="Voice icon"],
+[aria-label="Voice (Limited) icon"],
+[aria-label="Stage icon"],
+[aria-label="Stage (Limited) icon"],
+[aria-label="Announcements icon"],
+[aria-label="Announcements (Limited) icon"]
+{
+    display: none !important;
+}
+
+:is([aria-label="Text icon"],
+    [aria-label="Text (Active Threads) icon"]) + div
+{--c: 120}
+:is([aria-label="Text (Limited) icon"],
+    [aria-label="Text (Active Threads) icon"]:has(svg > :nth-child(2))) + div
+{--c: 90}
+[aria-label="Forum icon"] + div
+{--c: 190}
+[aria-label="Forum (Limited) icon"] + div
+{--c: 200}
+[aria-label="Voice icon"] + div
+{--c: 270}
+[aria-label="Voice (Limited) icon"] + div
+{--c: 290}
+[aria-label="Stage icon"] + div
+{--c: 0}
+[aria-label="Stage (Limited) icon"] + div
+{--c: 5}
+[aria-label="Announcements icon"] + div
+{--c: 30}
+[aria-label="Announcements (Limited) icon"] + div
+{--c: 20}
+
+[aria-label*="Limited"] + div
+{--spread: 2px}
+
+
+#channels [class*=name_]
+{
+    --spread: 0px;
+    --d: calc(var(--c) + 15);
+    --C: hsla(var(--c), 60%, 50%, 1);
+    --D: hsla(var(--d), 50%, 50%, 1);
+    text-shadow: 0 0 1px var(--C), 0 0 var(--spread) var(--D), 0 0 var(--spread) var(--D);
+    -webkit-text-stroke: 1px var(--C);
+}
+.theme-dark #channels [class*=name_] {color: var(--C, #fffa);}
+.theme-light #channels [class*=name_] {color: var(--C, #000a);}
+}

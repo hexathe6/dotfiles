@@ -1,0 +1,135 @@
+@-moz-document domain("discord.com") {
+:not([class*=container]) > [class*=avatarWrapper],
+[class*=profileBadges],
+[class*=bannerSVGWrapper],
+[class*=topSection],
+[class*=section]:has(> [class*=activity]),
+[class*=userProfileInner]::before,
+[class*=badgelistGroup],
+[class*=listAvatar],
+[class*=guildAvatar]
+{
+    display: none !important;
+}
+
+[class*=userPopoutOverlayBackground],
+[class*=userProfileModalOverlayBackground]
+{
+    margin: 0;
+    max-height: 100%;
+}
+
+[aria-label="Roles"][class*=root],
+[class*=focusLock]
+{
+    position: static !important;
+    display: block !important;
+    max-height: 100% !important;
+    height: 100% !important;
+}
+
+[class*=focusLock]:not(:has(:is([class*=carouselModal],[class*=media])))
+{
+    width: 50%;
+}
+
+.root_ba16f0 > div,
+.root_ba16f0 > div > div,
+.root_ba16f0 > div > div > div,
+.root_ba16f0 > div > div > div > div,
+.root_ba16f0 > div > div > div > div > div
+{
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+[class*=body_]
+{
+    display: flex !important;
+    flex-direction: column;
+}
+[class*=infoScroller]
+{
+    height: 100%;
+}
+
+[class*=lineClamp2Plus]
+{
+    -webkit-line-clamp: none !important;
+}
+
+[class*=tabBar]
+{
+    gap: 0;
+}
+[class*=tabBarItem]
+{
+    height: 2em;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+[class*=userProfileOuterThemed][class*=userPopoutOuter]
+{
+    padding: 0;
+}
+
+.theme-dark  {--pflbg: #000; --pflfg: #fff; --pflfg2: #ccc; --pflbg2: #222;}
+.theme-light {--pflbg: #fff; --pflfg: #000; --pflfg2: #444; --pflbg2: #eee;}
+
+[class*=userProfileOuterThemed][class*=userPopoutOuter],
+[class*=userProfileInnerThemedPremiumWithoutBanner],
+[class*=overlayBackground],
+[class*=rolePill],
+[class*=userProfileInnerThemedWithBanner]
+{
+    background: var(--pflbg) !important;
+}
+[class*=userPanelInnerThemed],
+[class*=userProfileOuterThemed]
+{
+    background: none;
+}
+[class*=userTagUsernameBase__],
+.defaultColor__87d87
+{
+    color: var(--pflfg);
+}
+.defaultColor__77578
+{
+    color: var(--pflfg2);
+}
+
+[class*=messageInputContainer],
+[class*=note_]
+{
+    border: 1px solid #fff4;
+}
+
+[class*=note_] textarea:focus
+{
+    background: var(--pflbg2);
+}
+
+[class*=role__][class*=rolePill_]
+{
+    border: 1px solid #444;
+}
+
+[class*=none_]
+{
+    display: flex;
+    flex-direction: column;
+}
+[class*=userPanelOverlayBackground_]
+{
+    margin: 0;
+    border-radius: 0;
+}
+[class*=userPanelOverlayBackground_]:nth-child(2)
+{
+    flex-grow: 1;
+}
+}

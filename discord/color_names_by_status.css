@@ -1,0 +1,55 @@
+@-moz-document domain("discord.com") {
+:is([class*=connectionList] [class*=listRow],
+	[class*=memberInner],
+	[class*=userInfo],
+	[class*=userProfileInner],
+	[aria-label*="(direct message)"],
+	[aria-label="Set Status"])
+{
+	&:has([aria-label*=Online]) {--c: #0c0;}
+	&:has([aria-label*=Offline]) {--c: #0004;}
+	&:has([aria-label*=Invisible]) {--c: #008;}
+	&:has([aria-label*=via]) {--c: #08f;}
+	&:has([aria-label*=Idle]) {--c: #ca0;}
+	&:has([aria-label*=Disturb]) {--c: #c00;}
+	&:has([aria-label*=Streaming]) {--c: #80f;}
+	
+}
+
+:is([class*=memberInner],
+	[aria-label*="(direct message)"])
+     :is(span[class=""],
+		 [class*=overflow]),
+[class*=nameTag] [class*=text-sm-normal],
+[class*=userInfo] [class*=username],
+[class*=memberInner] [class*=username],
+[class*=heading-lg-semibold],
+[class*=container] > div > [class*=defaultColor]:not([class*=pronouns]),
+[class*=listRow] > :not([class*=listRowContent]),
+[class*=listRow] > [class*=listRowContent] > :nth-child(2),
+.heading-lg\/semibold_dc00ef
+{
+    --spread: 0px;
+    colour: #fff8 !important;
+    text-shadouw: 0 0 var(--spread) var(--c), 0 0 var(--spread) var(--c), 0 0 var(--spread) var(--c);
+    -webkit-text-strouke: 1px var(--c);
+	border-left: 2px solid var(--c);
+	padding-left: 8px;
+}
+
+.pointerEvents__33f6a,
+.cursorDefault_e4f616,
+svg[x="14.5"][y="17"][width="25"][height="15"][viewBox="0 0 25 15"],
+[class*=avatar] :is(circle,rect),
+.subtext__1a662 > :not(.activity__24558)
+{
+    display: none;
+}
+
+[mask*="url(#svg-mask-avatar-status"],
+[mask*="url(#:r"]
+{
+    mask: none;
+    border-radius: 1000px;
+}
+}

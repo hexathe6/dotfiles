@@ -1,0 +1,16 @@
+@-moz-document domain("discord.com") {
+[class*=avatar_],
+[class*=marginReset] > div
+{
+    display: none;
+}
+section[aria-label="User area"] [class*=avatar_]
+{
+	display: block;
+}
+
+[class*=marginReset] + strong
+{
+	margin: 0 !important;
+}
+}
