@@ -7,7 +7,12 @@
 [class*=userProfileInner]::before,
 [class*=badgelistGroup],
 [class*=listAvatar],
-[class*=guildAvatar]
+[class*=guildAvatar],
+.statusBubbleOuter_d0a252::before,
+.statusBubbleOuter_d0a252::after,
+.header_c6e596 > [class],
+[aria-label="User Badges"],
+.invisibleContainer_d0a252
 {
     display: none !important;
 }
@@ -88,7 +93,8 @@
     background: var(--pflbg) !important;
 }
 [class*=userPanelInnerThemed],
-[class*=userProfileOuterThemed]
+[class*=userProfileOuterThemed],
+.custom-profile-theme .biteSizeInnerThemed_c69a7b
 {
     background: none;
 }
@@ -131,5 +137,69 @@
 [class*=userPanelOverlayBackground_]:nth-child(2)
 {
     flex-grow: 1;
+}
+
+[class*=roleName]
+{
+	max-width: unset;
+}
+
+.clamp_d0a252,
+.descriptionClamp_fc5c48
+{
+	-webkit-line-clamp: unset !important;
+}
+
+.header_c6e596
+{
+	min-height: unset !important;
+}
+.visibleContainer_d0a252.biteSize_d0a252
+{
+	position: static !important;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+.statusBubbleOuter_d0a252
+{
+	position: static;
+	max-width: unset !important;
+	border: none !important;
+	border-radius: 0;
+	border-bottom: 1px solid #8888 !important;
+	background: none !important;
+}
+.statusBubble_d0a252
+{
+	background: none !important;
+}
+.statusBubbleWithTextPadding_d0a252
+{
+	padding: 8px;
+	margin-top: -8px;
+}
+
+.wrapper_cb78f1.biteSize_cb78f1:has(div)
+{
+	position: static;
+	border-bottom: 1px solid #8888 !important;
+	display: flex;
+	gap: 0;
+}
+.wrapper_cb78f1.biteSize_cb78f1 > div
+{
+	flex-grow: 1;
+	display: flex;
+	justify-content: center;
+}
+.wrapper_cb78f1.biteSize_cb78f1 > div > button
+{
+	width: 100%;
+	padding: 0;
+}
+.wrapper_cb78f1.biteSize_cb78f1 > div:nth-child(1)
+{
+	border-right: 1px solid #8886 !important;
 }
 }
