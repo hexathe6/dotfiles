@@ -119,9 +119,18 @@
     background: var(--pflbg2);
 }
 
-[class*=role__][class*=rolePill_]
+@keyframes fix-roles
 {
-    border: 1px solid #444;
+	0% {width: 0%;}
+	100% {width: 100%;}
+}
+
+[class*=role_][class*=pill_]
+{
+    border: 1px solid #8888;
+	max-width: unset !important;
+	animation-name: fix-roles;
+	animation-duration: 0.1s;
 }
 
 [class*=none_]
@@ -150,11 +159,12 @@
 	-webkit-line-clamp: unset !important;
 }
 
-.custom-profile-theme header
+.custom-profile-theme header,
+[role="dialog"] header
 {
 	min-height: unset !important;
 }
-.custom-profile-theme header > div
+[role="dialog"] header > div
 {
 	width: 100%;
 }
@@ -201,8 +211,9 @@
 	width: 100%;
 	padding: 0;
 }
-.wrapper_cb78f1.biteSize_cb78f1 > div:nth-child(1)
+.wrapper_cb78f1.biteSize_cb78f1 > div:not(:last-child)
 {
 	border-right: 1px solid #8886 !important;
 }
+
 }
