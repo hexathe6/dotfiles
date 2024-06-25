@@ -150,15 +150,17 @@
 	-webkit-line-clamp: unset !important;
 }
 
-.header_c6e596
+.custom-profile-theme header
 {
 	min-height: unset !important;
+}
+.custom-profile-theme header > div
+{
+	width: 100%;
 }
 .visibleContainer_d0a252.biteSize_d0a252
 {
 	position: static !important;
-	top: 0;
-	left: 0;
 	width: 100%;
 }
 .statusBubbleOuter_d0a252
@@ -169,6 +171,7 @@
 	border-radius: 0;
 	border-bottom: 1px solid #8888 !important;
 	background: none !important;
+	width: 100% !important;
 }
 .statusBubble_d0a252
 {
