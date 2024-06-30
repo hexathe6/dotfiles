@@ -153,6 +153,7 @@ path[class*=background__],
 .userSmall_cdc675
 {
     height: unset !important;
+	max-height: unset !important;
 }
 
 .list_a478e5
@@ -489,10 +490,15 @@ nav[aria-label="Private channels"] li
 
 .reactionInner_ec6b19
 {
-	padding: 4px;
+	padding: 4px 5px;
 }
 .reaction_ec6b19 .emoji
 {
 	margin: 0;
+}
+
+.popoutContainer_cf58b5:has([class*=emojiSection])
+{
+	width: unset;
 }
 }

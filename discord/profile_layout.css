@@ -12,7 +12,8 @@
 .statusBubbleOuter_d0a252::after,
 .header_c6e596 > [class],
 [aria-label="User Badges"],
-.invisibleContainer_d0a252
+.invisibleContainer_d0a252,
+.multipleButtons_fcef98 > [aria-label="Add Friend"]
 {
     display: none !important;
 }
@@ -33,10 +34,10 @@
     height: 100% !important;
 }
 
-[class*=focusLock]:not(:has(:is([class*=carouselModal],[class*=media])))
+/*[class*=focusLock]:not(:has(:is([class*=carouselModal],[class*=media])))
 {
     width: 50%;
-}
+}*/
 
 .root_ba16f0 > div,
 .root_ba16f0 > div > div,
@@ -167,8 +168,24 @@
 [role="dialog"] header > div
 {
 	width: 100%;
+	padding: 0;
 }
-.visibleContainer_d0a252.biteSize_d0a252
+[role="dialog"] header [class*=buttons]
+{
+	display: block;
+	width: 100%;
+}
+.multipleButtons_fcef98
+{
+	gap: 0;
+}
+[role="dialog"] header [class*=buttons] [aria-label="Message"],
+[role="dialog"] header [class*=buttons] [aria-label="Message"] > button
+{
+	width: 100%;
+}
+.visibleContainer_d0a252.biteSize_d0a252,
+.visibleContainer_d0a252.fullSize_d0a252
 {
 	position: static !important;
 	width: 100%;
@@ -193,27 +210,69 @@
 	margin-top: -8px;
 }
 
-.wrapper_cb78f1.biteSize_cb78f1:has(div)
+.wrapper_cb78f1:has(div)
 {
 	position: static;
 	border-bottom: 1px solid #8888 !important;
 	display: flex;
 	gap: 0;
 }
-.wrapper_cb78f1.biteSize_cb78f1 > div
+.wrapper_cb78f1 > div
 {
 	flex-grow: 1;
 	display: flex;
 	justify-content: center;
 }
-.wrapper_cb78f1.biteSize_cb78f1 > div > button
+.wrapper_cb78f1 > div > button
 {
 	width: 100%;
 	padding: 0;
+	border-radius: 0;
 }
-.wrapper_cb78f1.biteSize_cb78f1 > div:not(:last-child)
+.wrapper_cb78f1 > div:not(:last-child)
 {
 	border-right: 1px solid #8886 !important;
 }
 
+.maxBioHeight_fc5c48 {max-height: unset !important;}
+
+/* [START-0] friend list */
+
+[role="tablist"]:has(.selected_a0[aria-label*=Friends]) + div
+{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+/* [END-0] */
+
+.custom-profile-theme > div
+{
+	background: var(--pflbg) !important;
+}
+
+.custom-profile-theme .color_fcef98,
+.color_fcef98
+{
+	border-radius: 0;
+	background: none !important;
+	border-bottom: 1px solid #8888;
+}
+.custom-profile-theme .color_fcef98:hover,
+.color_fcef98:hover
+{
+	background: var(--accent-color) !important;
+	color: var(--pflfg) !important;
+	opacity: 1;
+}
+
+.root_f9a4c9
+{
+	background: none;
+}
+
+.theme-dark.custom-profile-theme .biteSizeOverlayBackground_c69a7b, .theme-dark.custom-profile-theme .fullSizeOverlayBackground_c69a7b
+{
+	border-color: #8886;
+}
 }

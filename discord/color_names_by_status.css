@@ -1,10 +1,10 @@
 @-moz-document domain("discord.com") {
-:is([class*=connectionList] [class*=listRow],
-	[class*=memberInner],
-	[class*=userInfo],
-	[class*=userProfileInner],
-	[aria-label*="(direct message)"],
-	[aria-label="Set Status"])
+[class*=connectionList] [class*=listRow],
+[class*=memberInner],
+[class*=userInfo],
+[class*=userProfileInner],
+[aria-label*="(direct message)"],
+[aria-label="Set Status"]
 {
 	&:has([aria-label*=Online]) {--c: #0c0;}
 	&:has([aria-label*=Offline]) {--c: #0004;}
@@ -18,15 +18,15 @@
 
 :is([class*=memberInner],
 	[aria-label*="(direct message)"])
-     :is(span[class=""],
-		 [class*=overflow]),
+  :is(span[class=""],
+      [class*=overflow]),
 [class*=nameTag] [class*=text-sm-normal],
 [class*=userInfo] [class*=username],
 [class*=memberInner] [class*=username],
 [class*=heading-lg-semibold],
 [class*=container] > div > [class*=defaultColor]:not([class*=pronouns]),
-[class*=listRow] > :not([class*=listRowContent]),
-[class*=listRow] > [class*=listRowContent] > :nth-child(2),
+[class*=listRow] > :not(:is([class*=listRowContent],[class*=listName],.guildNick_b26403)),
+[class*=listRow] > [class*=listRowContent] > :nth-child(2):not(.guildNick_b26403),
 .heading-lg\/semibold_dc00ef
 {
     --spread: 0px;
