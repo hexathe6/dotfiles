@@ -49,11 +49,10 @@ pre, table.info {color: var(--text); background: var(--layer1); border-color: va
 
 table, .src.clearfix {width: 100%}
 
-#package-header {margin-left: var(--toc-width)}
-
 #content
 {
 	margin-left: var(--content-padding);
+	margin-top: var(--content-padding);
 	width: calc(100% - (2 * var(--content-padding))) !important;
 	max-width: unset !important;
 }
@@ -62,17 +61,31 @@ table, .src.clearfix {width: 100%}
 	margin-left: calc(var(--toc-width) + var(--content-padding));
 	width: calc(100% - var(--toc-width) - (2 * var(--content-padding))) !important;
 }
+
+#module-header
+{
+	display: flex;
+	flex-direction: column-reverse
+}
+#module-header .caption {margin-top: 0;}
+#module-header > table {margin: 0; width: max-content;}
+
 #table-of-contents
 {
+	position: sticky;
+	margin-left: calc(-1 * var(--toc-width) - var(--content-padding));
 	left: 0;
 	top: 0;
 	bottom: 0;
 	width: var(--toc-width);
 	max-width: unset;
+	height: 100vh;
 }
 #contents-list {background: var(--layer1)}
 #contents-list li {border-bottom: var(--border-thin)}
 #contents-list li > ul {margin-left: 0; padding-left: 8px; border-left: var(--border-thick)}
+
+#table-of-contents ~ div:not(#synopsis) {position: relative; top: -100vh;}
 
 .top p.src {border-color: var(--layer2)}
 .src, .subs .subs p.src, .doc th {background: var(--layer1)}
@@ -80,7 +93,7 @@ table, .src.clearfix {width: 100%}
 .doc th, .doc td {border: var(--border-thin)}
 
 #synopsis {top: 0; bottom: 0}
-@media (prefers-color-scheme: dark) {#synopsis details > summary {filter: invert(100%)}}
+@media (prefers-color-scheme: dark) {#synopsis details > summary, .math img {filter: invert(100%)}}
 #synopsis ul, #synopsis ul li.src, #search-results, .dropdown-menu {background: var(--synopsis)}
 
 /* these only ligate properly if you use a fancy font like fira code */
