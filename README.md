@@ -2,15 +2,18 @@
 
 ## userstyles
 
-### haskell
-
 `haskell_hackage_docs.css`
 - fullwidth layout
 - larger table of contents sidebar
 - adds support for browser dark mode (via css `prefers-color-scheme`)
-- customisable widths and colors, at the top of the file in the
-  `:root` selector
-  
+- customisable widths and colors, at the top of the file in the `:root` selector
+
+`youtube_quick_scale.ucss`
+- not using theatre mode in a separate window, and don't want to zoom in/out?
+  scale the video viewport to exactly the right width with this
+- does not scale the progressbar due to issues of event alignment (see internal description)
+- made for my friend Snowy!
+
 ## userscripts
 
 `youtube_blacklist.js`
