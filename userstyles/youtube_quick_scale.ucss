@@ -1,0 +1,38 @@
+/* ==UserStyle==
+@name           youtube quick scale
+@namespace      none
+@version        1.0.0
+@description    quick viewport scaling (note! the progress bar does not scale with the rest, as the interaction on it appears to be handled through js)
+@author         hexa6
+
+@preprocessor stylus
+
+@var range chosen_width "width" [50,0,100,null,"vw"]
+
+==/UserStyle== */
+
+@-moz-document domain("www.youtube.com") {
+    .ytp-hover-progress {
+        display: none;
+    }
+    #columns {
+        display: grid !important;
+        grid-template-columns: chosen_width 1fr;
+        gap: 64px;
+    }
+    #primary {
+        width: 100% !important;
+    }
+    #primary, #player-container-outer {
+        max-width: unset !important;
+        min-width: unset !important;
+    }
+    .ytp-chrome-bottom {
+        width: 99% !important; /* otherwise the controls hit the end, which looks bad */
+    }
+    #movie_player > .html5-video-container,
+    video {
+        width: 100% !important;
+        height: 100% !important;
+    }
+}
