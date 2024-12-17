@@ -1,0 +1,106 @@
+[class^=RightSidebar],
+[class*=Leaderboard],
+[class^=ShareButtons],
+[class^=SongComments] ~ :not([class^=SongComments]:not(:has(button[class*=SongComments]))),
+a > [class^=UserBadge]:first-child,
+[class^=UserBadge] [role],
+svg[class^=VotingActions],
+[class^=AnnotationActions],
+[class^=InreadContainer],
+[class^=QuestionList]:not(:last-child),
+[class^=DfpAd],
+#sticky-nav [class^=StyledLink],
+#sticky-nav button,
+#sticky-nav form[action="/search"] :last-child,
+[class^=Pyong],
+[class^=UnreviewedAnnotation] > svg,
+[class^=NewAnnotationComment],
+div[style] > [class^=BaseAnnotation]:first-child,
+[class^=LyricsHeader],
+[class^=OtherAlbums]
+{
+  display: none !important;
+}
+
+@media (prefers-color-scheme: light) { :root
+  {
+    --bg: #fff;
+    --bg-mid: #ccc;
+    --bg-acc: #c42;
+    --bg-hi: #f84;
+    --fg: #000;
+  }
+}
+@media (prefers-color-scheme: dark) { :root
+  {
+    --bg: #000;
+    --bg-mid: #444;
+    --bg-acc: #821;
+    --bg-hi: #842;
+    --fg: #fff;
+  }
+}
+
+#lyrics-root, [class^=PageGrid]:is([class*=About],[class*=SongComments]) {display: block; padding: 0 16px}
+
+ol[class^=AlbumTracklist]
+{
+  display: flex;
+  flex-direction: column;
+  height: min-content;
+  & > li {
+    width: max-content;
+    margin: 0;
+  }
+}
+
+.jeqbuT /* about */,
+.hKOAIM /* comments */
+/* todo: find constant selectors */
+{
+  max-height: unset;
+  mask: none;
+  & + div {display: none}
+}
+
+#primary-album + div {width: calc(415px / 2); margin: 0 16px 16px 0}
+[class^=Inner] + [class^=PrimaryAlbum] {display: flex; flex-wrap: wrap}
+#primary-album + div + div {width: calc(100% - 415px / 2 - 16px /* don't ask why it's 16px, maybe it has something to do with the page margins? */)}
+
+/* align commenter usernames */
+:is(a,[class^=UserBadge]) > [class^=UserBadge]:nth-child(2)
+{margin: 0}
+
+[class^=BaseAnnotation] {background: var(--bg)}
+
+/* dark theme support */
+
+body {background-color: var(--bg); color: var(--fg)}
+
+[class^=Referent]
+{
+  background-color: var(--bg-mid);
+  color: var(--fg);
+  &:hover {
+    background-color: var(--bg-hi);
+  }
+}
+
+#about + div /* about */,
+main > :first-child /* song header */,
+#sticky-nav
+{
+  background-image: none;
+  background-color: var(--bg-acc);
+}
+
+[class^=UnreviewedAnnotation] > div[class^=U]
+{
+  background: repeating-linear-gradient(135deg, var(--bg), var(--bg) 7px, var(--bg-hi) 7px, var(--bg-hi) 14px);
+  & * {text-shadow: 0 0 1px var(--bg), 0 0 2px var(--bg), 0 0 3px var(--bg), 0 0 4px var(--bg), 0 0 5px var(--bg), 0 0 5px var(--bg), 0 0 5px var(--bg), 0 0 5px var(--bg), 0 0 5px var(--bg);}
+}
+
+#sticky-nav form[action="/search"],
+#sticky-nav form[action="/search"] > input::placeholder,
+#sticky-nav form[action="/search"] *
+{background-color: var(--bg); color: var(--fg)}
