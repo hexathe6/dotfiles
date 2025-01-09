@@ -1,4 +1,4 @@
-@-moz-document regexp("https://hackage.haskell.org/.*/docs/[^s].*") {
+@-moz-document regexp("https://(hackage|downloads).haskell.org/package/.*/docs/[^s].*") {
 :root {
 	--content-padding: 16px;
 	--toc-width: 300px;
@@ -55,6 +55,8 @@ table, .src.clearfix {width: 100%}
 	margin-top: var(--content-padding);
 	width: calc(100% - (2 * var(--content-padding))) !important;
 	max-width: unset !important;
+    /* for old layout */
+    padding: 0;
 }
 #content:has(#table-of-contents)
 {
@@ -80,6 +82,11 @@ table, .src.clearfix {width: 100%}
 	width: var(--toc-width);
 	max-width: unset;
 	height: 100vh;
+    /* for old layout */
+    background: var(--layer1);
+    border: none;
+    float: unset;
+    box-sizing: border-box;
 }
 #contents-list {background: var(--layer1)}
 #contents-list li {border-bottom: var(--border-thin)}
@@ -108,4 +115,20 @@ a[href]:link {color: var(--link)}
 
 :target {color: var(--target); background: var(--targetbg)}
 :target:hover {color: var(--text); background: var(--target)}
+
+.inline-code {background: var(--layer2); border: 1px solid var(--srclink)}
+
+/* for old layout */
+
+#interface .src .selflink, #interface .src .link
+{
+    background: none;
+    border: none;
+}
+
+.collapser, .expander
+{
+    background: none;
+    padding: 0;
+}
 }
